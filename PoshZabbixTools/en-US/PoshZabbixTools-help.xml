@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems schema="maml">
+<helpItems xmlns="http://msh" schema="maml">
 
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <command:details><command:name>Connect-ZabbixServer</command:name>
@@ -135,8 +135,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Connect-ZabbixServer</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Connect-ZabbixServer</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>http://poshzabbixtools.readthedocs.io/en/latest/en-US/Connect-ZabbixServer/</maml:linkText>
+<maml:uri>http://poshzabbixtools.readthedocs.io/en/latest/en-US/Connect-ZabbixServer/</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -180,8 +180,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Disconnect-ZabbixServer</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Disconnect-ZabbixServer</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Disconnect-ZabbixServer</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Disconnect-ZabbixServer</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -334,8 +334,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHost</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHost</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHost</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHost</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -428,8 +428,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHostGroup</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHostGroup</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHostGroup</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHostGroup</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -582,8 +582,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItem</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItem</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItem</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItem</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -701,8 +701,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItemHistory</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItemHistory</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItemHistory</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItemHistory</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -831,8 +831,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixTemplate</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixTemplate</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixTemplate</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixTemplate</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>

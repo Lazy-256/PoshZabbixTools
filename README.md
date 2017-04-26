@@ -1,9 +1,11 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/gvrr83aty09sfjcl?svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools)
-[![Documentation Status](https://readthedocs.org/projects/poshzabbixtools/badge/?version=latest)](http://poshzabbixtools.readthedocs.io/en/latest/?badge=latest)
+# PoshZabbixTools PowerShell Module
 
-# PoshZabbixTools Module
+[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=stable&passingText=stable%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/stable)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=develop&passingText=develop%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/develop)
+[![Documentation Status](http://readthedocs.org/projects/poshzabbixtools/badge/?version=stable)](http://poshzabbixtools.readthedocs.io/en/stable/?badge=stable)
+[![Documentation Status](http://readthedocs.org/projects/poshzabbixtools/badge/?version=develop)](http://poshzabbixtools.readthedocs.io/en/develop/?badge=develop)
 
-This module lets you manage your Zabbix monitoring environment.
+A set of PowerShell tools to interact with the Zabbix API.
 
 ## Installation
 
@@ -43,6 +45,7 @@ PS> Get-Command -Module PoshZabbixTools
 
 ## Notes
 
+Thanks go to:
 * [Simon Morand](https://github.com/simnyc) started this idea with his [zabbixPoshAPI](https://github.com/simnyc/zabbixPoshAPI).
 
 
