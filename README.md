@@ -1,8 +1,10 @@
 # PoshZabbixTools PowerShell Module
 
-[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=stable&passingText=stable%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/stable)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=develop&passingText=develop%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/develop)
+Master[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=master&passingText=master%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/stable)
 [![Documentation Status](http://readthedocs.org/projects/poshzabbixtools/badge/?version=stable)](http://poshzabbixtools.readthedocs.io/en/stable/?badge=stable)
+
+Develop
+[![Build status](https://ci.appveyor.com/api/projects/status/github/twillin912/poshzabbixtools?branch=develop&passingText=develop%20-%20OK&svg=true)](https://ci.appveyor.com/project/twillin912/poshzabbixtools/branch/develop)
 [![Documentation Status](http://readthedocs.org/projects/poshzabbixtools/badge/?version=develop)](http://poshzabbixtools.readthedocs.io/en/develop/?badge=develop)
 
 A set of PowerShell tools to interact with the Zabbix API.
