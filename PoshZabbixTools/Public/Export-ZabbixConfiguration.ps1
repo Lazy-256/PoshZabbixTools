@@ -27,6 +27,12 @@ function Export-ZabbixConfiguration {
             break;
         }
 
+        # Build hashtable to splat certificate into RestMethod function
+        $ZabbixCert = @{}
+        if ( $env:ZabbixCert ) {
+            $ZabbixCert.Add('Certificate', $env:ZabbixCert)
+        }
+
         #$OutputObject = @()
     }
 
@@ -41,7 +47,7 @@ function Export-ZabbixConfiguration {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Sending JSON request object`n$($JsonRequest -Replace $env:ZabbixAuth, 'XXXXXX')"
 
         try {
-            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' -ErrorAction Stop
+            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
             #Write-Verbose -Message "$JsonResponse"
         }
         catch {

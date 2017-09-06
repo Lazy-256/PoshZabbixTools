@@ -48,7 +48,7 @@ function Connect-ZabbixServer {
         [System.Management.Automation.Credential()]
         $Credential,
 
-        $Certificate = $Global:Certificate
+        $Certificate
     )
     [System.Net.ServicePointManager]::SecurityProtocol = @("Tls12","Tls11")
 
@@ -63,6 +63,13 @@ function Connect-ZabbixServer {
         $Uri = "http://$Server/zabbix/api_jsonrpc.php"
     }
 
+    # Build hashtable to splat certificate into RestMethod function
+    $ZabbixCert = @{}
+    if ( $Certificate ) {
+        $env:ZabbixCert = $Certificate
+        $ZabbixCert.Add('Certificate', $env:ZabbixCert)
+    }
+
     $ZabbixUser = $Credential.UserName
     $ZabbixPassword = $Credential.GetNetworkCredential().Password
 
@@ -75,7 +82,7 @@ function Connect-ZabbixServer {
 
     try {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Submitting login request to $Uri"
-        $JsonResponse = Invoke-RestMethod -Uri $Uri -Method Put -Body $JsonRequest -ContentType 'application/json' -Certificate $Certificate -ErrorAction Stop
+        $JsonResponse = Invoke-RestMethod -Uri $Uri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
     }
     catch {
         Write-Error "StatusCode: $($_.Exception.Response.StatusCode.value__)"
@@ -86,11 +93,11 @@ function Connect-ZabbixServer {
     if (!$JsonResponse.Result) {
         Write-Warning -Message "$($MyInvocation.MyCommand.Name): Unable to connect to Zabbix, aborting"
         break
+    } else {
+        Write-Verbose "$($MyInvocation.MyCommand.Name): Connection to Zabbix is successfull"
+        [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
+        $env:ZabbixUri = $Uri
+        [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
+        $env:ZabbixAuth = $JsonResponse.Result
     }
-
-    Write-Verbose "$($MyInvocation.MyCommand.Name): Connection to Zabbix is successfull"
-    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
-    $env:ZabbixUri = $Uri
-    [System.Diagnostics.CodeAnalysis.SuppressMessage('PSUseDeclaredVarsMoreThanAssigments', '')]
-    $env:ZabbixAuth = $JsonResponse.Result
 }

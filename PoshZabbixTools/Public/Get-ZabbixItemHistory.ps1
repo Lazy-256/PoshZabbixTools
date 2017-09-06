@@ -46,15 +46,19 @@ function Get-ZabbixItemHistory {
         [int] $ValueType,
 
         [Parameter()]
-        [int] $Last = 1,
-
-        $Certificate = $Global:Certificate
+        [int] $Last = 1
     )
 
     Begin {
         if (!($env:ZabbixAuth)) {
             Write-Warning -Message "$($MyInvocation.MyCommand.Name): No session information found. Use 'Connect-ZabbixServer' to login and create your Api session."
             break;
+        }
+
+        # Build hashtable to splat certificate into RestMethod function
+        $ZabbixCert = @{}
+        if ( $env:ZabbixCert ) {
+            $ZabbixCert.Add('Certificate', $env:ZabbixCert)
         }
 
         $OutputObject = @()
@@ -81,7 +85,7 @@ function Get-ZabbixItemHistory {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Sending JSON request object`n`t$($JsonRequest -Replace $env:ZabbixAuth, 'XXXXXX')"
 
         try {
-            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' -Certificate $Certificate -ErrorAction Stop
+            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
         }
         catch {
             Write-Error "StatusCode: $($_.Exception.Response.StatusCode.value__)"

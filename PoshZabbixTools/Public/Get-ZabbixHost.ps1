@@ -43,22 +43,20 @@ function Get-ZabbixHost {
     [OutputType([PSObject])]
 
     Param(
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $HostId,
 
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $GroupId,
 
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $TemplateId,
 
         [Parameter()]
         [string] $Name,
 
         [Parameter()]
-        [switch] $Short,
-
-        $Certificate = $Global:Certificate
+        [switch] $Short
     )
 
     Begin {
@@ -67,13 +65,18 @@ function Get-ZabbixHost {
             break;
         }
 
-        $OutputObject = @()
+        # Build hashtable to splat certificate into RestMethod function
+        $ZabbixCert = @{}
+        if ( $env:ZabbixCert ) {
+            $ZabbixCert.Add('Certificate', $env:ZabbixCert)
+        }
 
+        $OutputObject = @()
     }
 
     Process {
-        $Params=@{}
-        $Search=@{}
+        $Params = @{}
+        $Search = @{}
 
         # Construct the Params and Search variables
         if ( $HostId ) {
@@ -99,7 +102,8 @@ function Get-ZabbixHost {
 
         if ( $Short ) {
             $Params.Add('output', 'short')
-        } else {
+        }
+        else {
             $Params.Add('output', 'extend')
             $Params.Add('selectGroups', 'extend')
         }
@@ -108,7 +112,7 @@ function Get-ZabbixHost {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Sending JSON request object`n$($JsonRequest -Replace $env:ZabbixAuth, 'XXXXXX')"
 
         try {
-            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' -Certificate $Certificate -ErrorAction Stop
+            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
             Write-Verbose -Message "$JsonResponse"
         }
         catch {

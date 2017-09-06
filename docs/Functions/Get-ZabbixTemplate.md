@@ -7,7 +7,7 @@ schema: 2.0.0
 # Get-ZabbixTemplate
 
 ## SYNOPSIS
-Gets the hosts from a Zabbix server.
+Gets the templates from a Zabbix server.
 
 ## SYNTAX
 
@@ -17,10 +17,10 @@ Get-ZabbixTemplate [[-TemplateId] <Int32[]>] [[-GroupId] <Int32[]>] [[-Name] <St
 ```
 
 ## DESCRIPTION
-The Get-ZabbixHost cmdlet gets the hosts from a Zabbix server.
+The Get-ZabbixTemplate cmdlet gets the templates from a Zabbix server.
 
-Without parameters, this cmdlet gets all hosts on the server. 
-You can also specify a particular host by host id, group id, or host name.
+Without parameters, this cmdlet gets all templates on the server. 
+You can also specify a particular template by template id, group id, or template name.
 
 ## EXAMPLES
 
@@ -55,7 +55,8 @@ Get template data for all templates in the group 'Group01'
 ## PARAMETERS
 
 ### -TemplateId
-{{Fill TemplateId Description}}
+Specifies one or more templates by template id.
+You can type multiple template ids (separated by commas).
 
 ```yaml
 Type: Int32[]
@@ -70,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-Specifies one or more hosts by group id.
+Specifies one or more templates by group id.
 You can type multiple group ids (separated by commas).
 
 ```yaml
@@ -86,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-Specifies one or more hosts by host name. 
+Specifies one or more templates by template name. 
 You can use wildcard characters.
 
 ```yaml
@@ -102,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -Short
-Indicates that only the HostId value it returned. 
+Indicates that only the TemplateId value it returned. 
 This can be useful when piping the output to another command.
 
 ```yaml

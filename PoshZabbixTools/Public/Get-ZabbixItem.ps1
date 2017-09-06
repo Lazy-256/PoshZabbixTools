@@ -43,10 +43,10 @@ function Get-ZabbixItem {
     [OutputType([PSObject])]
 
     Param(
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $ItemId,
 
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $HostId,
 
         [Parameter()]
@@ -56,9 +56,7 @@ function Get-ZabbixItem {
         [string] $Key,
 
         [Parameter()]
-        [switch] $Short,
-
-        $Certificate = $Global:Certificate
+        [switch] $Short
     )
 
     Begin {
@@ -67,13 +65,19 @@ function Get-ZabbixItem {
             break;
         }
 
+        # Build hashtable to splat certificate into RestMethod function
+        $ZabbixCert = @{}
+        if ( $env:ZabbixCert ) {
+            $ZabbixCert.Add('Certificate', $env:ZabbixCert)
+        }
+
         $OutputObject = @()
 
     }
 
     Process {
-        $Params=@{}
-        $Search=@{}
+        $Params = @{}
+        $Search = @{}
 
         # Construct the Params and Search variables
         if ( $ItemId ) {
@@ -98,8 +102,9 @@ function Get-ZabbixItem {
         }
 
         if ( $Short ) {
-            $Params.Add('output', @('itemid','value_type'))
-        } else {
+            $Params.Add('output', @('itemid', 'value_type'))
+        }
+        else {
             $Params.Add('output', 'extend')
         }
 
@@ -107,7 +112,7 @@ function Get-ZabbixItem {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Sending JSON request object`n`t$($JsonRequest -Replace $env:ZabbixAuth, 'XXXXXX')"
 
         try {
-            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' -Certificate $Certificate -ErrorAction Stop
+            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
         }
         catch {
             Write-Error "StatusCode: $($_.Exception.Response.StatusCode.value__)"

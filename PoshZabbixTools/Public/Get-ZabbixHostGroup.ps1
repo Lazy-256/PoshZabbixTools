@@ -27,16 +27,14 @@ function Get-ZabbixHostGroup {
     [OutputType([PSObject])]
 
     Param(
-        [Parameter(ValueFromPipelineByPropertyName=$true)]
+        [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $GroupId,
 
         [Parameter()]
         [string] $Name,
 
         [Parameter()]
-        [switch] $Short,
-
-        $Certificate = $Global:Certificate
+        [switch] $Short
     )
 
     Begin {
@@ -45,13 +43,19 @@ function Get-ZabbixHostGroup {
             break;
         }
 
+        # Build hashtable to splat certificate into RestMethod function
+        $ZabbixCert = @{}
+        if ( $env:ZabbixCert ) {
+            $ZabbixCert.Add('Certificate', $env:ZabbixCert)
+        }
+
         $OutputObject = @()
 
     }
 
     Process {
-        $Params=@{}
-        $Search=@{}
+        $Params = @{}
+        $Search = @{}
 
         # Construct the Params and Search variables
         if ( $GroupId ) {
@@ -69,7 +73,8 @@ function Get-ZabbixHostGroup {
 
         if ( $Short ) {
             $Params.Add('output', 'short')
-        } else {
+        }
+        else {
             $Params.Add('output', 'extend')
         }
 
@@ -77,7 +82,7 @@ function Get-ZabbixHostGroup {
         Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Sending JSON request object`n$($JsonRequest -Replace $env:ZabbixAuth, 'XXXXXX')"
 
         try {
-            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' -Certificate $Certificate -ErrorAction Stop
+            $JsonResponse = Invoke-RestMethod -Uri $env:ZabbixUri -Method Put -Body $JsonRequest -ContentType 'application/json' @ZabbixCert -ErrorAction Stop
             Write-Verbose -Message "$JsonResponse"
         }
         catch {
@@ -93,7 +98,7 @@ function Get-ZabbixHostGroup {
         if ( $OutputObject.Count -ne 0 ) {
             if ( -not $Short ) {
                 foreach ( $Object in $OutputObject ) {
-                $Object.PSObject.TypeNames.Insert(0, 'Custom.Zabbix.HostGroup')
+                    $Object.PSObject.TypeNames.Insert(0, 'Custom.Zabbix.HostGroup')
                 }
             }
             Write-Output -InputObject $OutputObject

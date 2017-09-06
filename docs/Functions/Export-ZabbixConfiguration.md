@@ -12,7 +12,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-Export-ZabbixConfiguration [-Identity] <String[]> [-Type] <String> [<CommonParameters>]
+Export-ZabbixConfiguration [-Identity] <Int32[]> [-Type] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,14 +33,14 @@ PS C:\> {{ Add example code here }}
 {{Fill Identity Description}}
 
 ```yaml
-Type: String[]
+Type: Int32[]
 Parameter Sets: (All)
-Aliases: 
+Aliases: GroupId, HostId, TemplateId
 
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 

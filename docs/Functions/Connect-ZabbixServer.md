@@ -13,12 +13,13 @@ Sends a login request to a Zabbix server API service.
 
 ### Uri
 ```
-Connect-ZabbixServer -Uri <String> -Credential <PSCredential> [<CommonParameters>]
+Connect-ZabbixServer -Uri <String> -Credential <PSCredential> [-Certificate <Object>] [<CommonParameters>]
 ```
 
 ### Server
 ```
-Connect-ZabbixServer -Server <String> [-Secure] -Credential <PSCredential> [<CommonParameters>]
+Connect-ZabbixServer -Server <String> [-Secure] -Credential <PSCredential> [-Certificate <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,6 +106,21 @@ Parameter Sets: (All)
 Aliases: 
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Certificate
+{{Fill Certificate Description}}
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
