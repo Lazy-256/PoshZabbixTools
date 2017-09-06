@@ -1,11 +1,15 @@
 site_name: PoshZabbixTools Documentation
+repo_url: https://github.com/twillin912/PoshZabbixTools
+theme: readthedocs
 pages:
-- Home: index.md
-- Functions:
-  - Connect-ZabbixServer: en-US/Connect-ZabbixServer.md
-  - Disconnect-ZabbixServer: en-US/Disconnect-ZabbixServer.md
-  - Get-ZabbixHost: en-US/Get-ZabbixHost.md
-  - Get-ZabbixHostGroup: en-US/Get-ZabbixHostGroup.md
-  - Get-ZabbixItem: en-US/Get-ZabbixItem.md
-  - Get-ZabbixItemHistory: en-US/Get-ZabbixItemHistory.md
-  - Get-ZabbixTemplate: en-US/Get-ZabbixTemplate.md
+  - Home: index.md
+  - PoshZabbixTools Basics:
+    - Quick Start: quickstart.md
+  - Functions:
+  - Connect-ZabbixServer: Functions/Connect-ZabbixServer.md
+  - Disconnect-ZabbixServer: Functions/Disconnect-ZabbixServer.md
+  - Get-ZabbixHost: Functions/Get-ZabbixHost.md
+  - Get-ZabbixHostGroup: Functions/Get-ZabbixHostGroup.md
+  - Get-ZabbixItem: Functions/Get-ZabbixItem.md
+  - Get-ZabbixItemHistory: Functions/Get-ZabbixItemHistory.md
+  - Get-ZabbixTemplate: Functions/Get-ZabbixTemplate.md

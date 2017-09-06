@@ -1,16 +1,14 @@
 # PoshZabbixTools Docs
 
-PoshZabbixTools Documentation is using a combination of [PlatyPS](https://github.com/PowerShell/platyPS) and [ReadTheDocs](https://readthedocs.org/). This let's you write the command help once and it will create External Help, Github Markdown Help, and Help hosted on ReadTheDocs.
+PoshZabbixTools uses ReadTheDocs to host our documentation.  This allows us to keep our docs in the repository, without the various limitations that come with the built in GitHub repo wiki.
 
-- Help is written in Markdown in [the docs folder](https://github.com/twillin912/PoshZabbixTools/tree/master/docs) following a PlatyPS schema.
-- It then gets exported into an External Help file PoshZabbixTools-help.xml.
-- When committed, ReadTheDocs then uses the [mkdocs.yml](https://github.com/twillin912/PoshZabbixTools/blob/master/mkdocs.yml) file to build the Documentation based on the mkdocs.yml layout.
+Contributions welcome:
 
-## Contributing to Documentation
+* Clone the [PoshZabbixTools repo](https://github.com/twillin912/PoshZabbixTools/tree/stable)
+* Checkout the develop branch
+* Commit changes
+  * Organization is described in the [mkdocs.yml](https://github.com/twillin912/PoshZabbixTools/blob/stable/mkdocs.yml) file
+  * mkdocs.yml points to markdown files in [the docs folder](https://github.com/twillin912/PoshZabbixTools/tree/stable/docs)
+  * Images are stored and accessible from [docs/images](https://github.com/twillin912/PoshZabbixTools/tree/stable/docs/images)
+* Submit a pull request to the develop branch
 
-If you find any corrections, typos or would like to contribute to the Documentation, you can do the following:
-
-- Clone the [PoshZabbixTools Repo](https://github.com/twillin912/PoshZabbixTools)
-- Edit the Documentation Markdown in the [the docs folder](https://github.com/twillin912/PoshZabbixTools/tree/master/docs)
-- The structure of the Help Markdown Files is described in the [mkdocs.yml](https://github.com/twillin912/PoshZabbixTools/blob/master/mkdocs.yml)
-- Commit changes and submit a Pull Request.

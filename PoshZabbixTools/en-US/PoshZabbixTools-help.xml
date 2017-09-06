@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<helpItems schema="maml">
+<helpItems xmlns="http://msh" schema="maml">
 
 <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
 <command:details><command:name>Connect-ZabbixServer</command:name>
@@ -135,8 +135,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Connect-ZabbixServer</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Connect-ZabbixServer</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>http://poshzabbixtools.readthedocs.io/en/latest/en-US/Connect-ZabbixServer/</maml:linkText>
+<maml:uri>http://poshzabbixtools.readthedocs.io/en/latest/en-US/Connect-ZabbixServer/</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -180,8 +180,95 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Disconnect-ZabbixServer</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Disconnect-ZabbixServer</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Disconnect-ZabbixServer</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Disconnect-ZabbixServer</maml:uri>
+</maml:navigationLink>
+</command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Export-ZabbixConfiguration</command:name>
+<command:verb>Export</command:verb>
+<command:noun>ZabbixConfiguration</command:noun>
+<maml:description><maml:para>{{Fill in the Synopsis}}
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>{{Fill in the Description}}
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Export-ZabbixConfiguration</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>Identity</maml:name>
+<maml:Description><maml:para>{{Fill Identity Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+<dev:type><maml:name>String[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Type</maml:name>
+<maml:Description><maml:para>{{Fill Type Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValueGroup><command:parameterValue required="false" variableLength="false">Groups</command:parameterValue>
+<command:parameterValue required="false" variableLength="false">Hosts</command:parameterValue>
+<command:parameterValue required="false" variableLength="false">Screens</command:parameterValue>
+<command:parameterValue required="false" variableLength="false">Templates</command:parameterValue>
+<command:parameterValue required="false" variableLength="false">ValueMaps</command:parameterValue>
+</command:parameterValueGroup>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="none"><maml:name>Identity</maml:name>
+<maml:Description><maml:para>{{Fill Identity Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+<dev:type><maml:name>String[]</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>Type</maml:name>
+<maml:Description><maml:para>{{Fill Type Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>System.String[]</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks><maml:navigationLink><maml:linkText>Online Version:</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Disconnect-ZabbixServer</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -334,8 +421,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHost</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHost</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHost</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHost</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -428,8 +515,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHostGroup</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixHostGroup</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHostGroup</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixHostGroup</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -582,8 +669,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItem</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItem</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItem</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItem</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -701,8 +788,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItemHistory</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixItemHistory</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItemHistory</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItemHistory</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
@@ -831,8 +918,8 @@
 </dev:remarks>
 </command:example>
 </command:examples>
-<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixTemplate</maml:linkText>
-<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/Commands/Get-ZabbixTemplate</maml:uri>
+<command:relatedLinks><maml:navigationLink><maml:linkText>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixTemplate</maml:linkText>
+<maml:uri>https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixTemplate</maml:uri>
 </maml:navigationLink>
 </command:relatedLinks>
 </command:command>
