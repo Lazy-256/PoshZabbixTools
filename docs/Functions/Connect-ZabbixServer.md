@@ -1,5 +1,6 @@
 ---
 external help file: PoshZabbixTools-help.xml
+Module Name: PoshZabbixTools
 online version: http://poshzabbixtools.readthedocs.io/en/latest/en-US/Connect-ZabbixServer/
 schema: 2.0.0
 ---

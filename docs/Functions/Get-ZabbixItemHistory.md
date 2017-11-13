@@ -1,5 +1,6 @@
 ---
 external help file: PoshZabbixTools-help.xml
+Module Name: PoshZabbixTools
 online version: https://poshzabbixtools.readthedocs.io/en/latest/en-US/Get-ZabbixItemHistory
 schema: 2.0.0
 ---
