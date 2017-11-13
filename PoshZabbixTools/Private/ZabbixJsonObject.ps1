@@ -5,7 +5,8 @@ function ZabbixJsonObject {
         [Parameter(Mandatory=$true)]
         [string]$RequestType,
 
-        [PSObject]$Parameters
+        [Parameter()]
+        $Parameters
     )
 
     Write-Verbose -Message "$($MyInvocation.MyCommand.Name): Creating new request object."
