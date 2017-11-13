@@ -6,7 +6,7 @@ function Get-ZabbixHost {
         The Get-ZabbixHost cmdlet gets the hosts from a Zabbix server.
 
         Without parameters, this cmdlet gets all hosts on the server.  You can also specify a particular host by host id, group id, or host name.
-    .PARAMETER HostId
+    .PARAMETER Identity
         Specifies one or more hosts by host id. You can type multiple host ids (separated by commas).
     .PARAMETER GroupId
         Specifies one or more hosts by group id. You can type multiple group ids (separated by commas).
@@ -15,7 +15,7 @@ function Get-ZabbixHost {
     .PARAMETER Name
         Specifies one or more hosts by host name.  You can use wildcard characters.
     .PARAMETER Short
-        Indicates that only the HostId value it returned.  This can be useful when piping the output to another command.
+        Indicates that only the Identity value it returned.  This can be useful when piping the output to another command.
     .EXAMPLE
         Get-ZabbixHost
         Get all hosts on the server.
@@ -23,7 +23,7 @@ function Get-ZabbixHost {
         Get-ZabbixHost -HostName 'Server01'
         In this example we are searching for any hosts where the 'host' field match the search input.
     .EXAMPLE
-        Get-ZabbixHost -HostId 10000,10001,10002
+        Get-ZabbixHost -Identity 10000,10001,10002
         Retrieve host(s) by Id
     .EXAMPLE
         Get-ZabbixHostGroup -Name MyGroup | Get-ZabbixHost
@@ -44,16 +44,17 @@ function Get-ZabbixHost {
 
     Param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
-        [int[]] $HostId,
+        [Alias('HostId')]
+        [int[]] $Identity,
+
+        [Parameter()]
+        [string] $Name,
 
         [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $GroupId,
 
         [Parameter(ValueFromPipelineByPropertyName = $true)]
         [int[]] $TemplateId,
-
-        [Parameter()]
-        [string] $Name,
 
         [Parameter()]
         [switch] $Short
@@ -79,8 +80,8 @@ function Get-ZabbixHost {
         $Search = @{}
 
         # Construct the Params and Search variables
-        if ( $HostId ) {
-            $Params.Add('hostids', $HostId)
+        if ( $Identity ) {
+            $Params.Add('hostids', $Identity)
         }
 
         if ( $GroupId ) {
